@@ -4,8 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>En Contruccion</title>
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          background-color: #7a0000;
+          padding: 10px;
+        }
+        .grid-item {
+          background-color: rgba(133, 0, 0, 0.8);
+          border: 1px solid rgba(172, 0, 0, 0.8);
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+        }
+      
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+        
+        </style>
 </head>
-<body>
-    
+<body bgcolor="brown">
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">
+           
+            <!--
+
+            -->
+            <img src="./imagenes/comida-rapida-casera.jpg" style="height: 360px;;"/>
+        </div>
+        <div class="grid-item">
+            <a title="sesion" href="./Formulario.html">
+                <img src="./imagenes/inicio_sesion.png" style="height: 100px; margin-top: -50px;;"/>
+            </a>
+        </div>  
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>  
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>  
+      </div>
 </body>
 </html>
