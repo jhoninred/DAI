@@ -3,14 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de usuario</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/d3js/6.3.1/d3.min.js"></script>
-    <script>
-      
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <style>
     .formulario{
         width: 300px;
-        background: #FFBE33;
+        background: #ffffff;
         padding: 30px;
         margin: auto;
         margin-top: 100px;
@@ -83,41 +81,105 @@ li a:hover {
         
         <center><H1> Registro de usuario</H1></center>
 
-        <form id="form-envia" name="formEnvia">
+<form id="form-envia" action="" method="post">
 
         
         <label class="texto" for="Nombre">Ingrese su nombre</label>
         <input class="controles" type  ="text" name="Nombre" id="Nombre" required>
-        
+        <br/>
 
-        <label class="texto" for="Apellido">Ingrese su apellido</label>
+        <label class="texto" for="apellido">Ingrese su apellido</label>
         <input class="controles" type="text" name="apellido" id="apellido" required>
-       
+        <br/>       
 
-        <label class="texto" for="Email">Ingrese su email</label>
-        <input class="controles" type="email" name="Email" id="Email" required>
-        
+        <label class="texto" for="email">Ingrese su email</label>
+        <input class="controles" type="email" name="email" id="email" required>
+        <br/>
 
-        <label class="texto" for="Contraseña">Ingrese su contraseña</label>
-        <input class="controles" type="password" name="Contraseña" id="contraseña" required>
-        
+        <label class="texto" for="contraseña">Ingrese su contraseña</label>
+        <input class="controles" type="password" name="contraseña" id="contraseña" minlength="8" required>
+        <br/>
 
-        <label class="texto" for="Telefono">Ingrese su telefono</label>
-        <input class="controles" type="number" name="Telefono" id="Telefono" min="9" max="9" required >
-        
+        <label class="texto" for="telefono">Ingrese su telefono</label>
+        <input class="controles" type="number" name="telefono" id="telefono"  minlength="9" maxlength="9"  required >
+        <br/>
 
-        <label class="texto" for="Direccion">Ingrese su direccion</label>
-        <input class="controles" type="text" name="Direccion" id="Direccion" required>
-        
+        <label class="texto" for="direccion">Ingrese su direccion</label>
+        <input class="controles" type="text" name="direccion" id="direccion" required>
+        <br/>
 
-        <label class="texto" for="Fecha_nacimiento">Ingrese su Fecha de nacimiento</label>
-        <input class="controles" type="date" name="Fecha_nacimiento" id="Fecha_nacimiento" required>
+        <label class="texto" for="fecha_nacimiento">Ingrese su Fecha de nacimiento</label>
+        <input class="controles" type="date" name="fecha_nacimiento" id="fecha_nacimiento" min="1871-01-01" max="2021-12-31"required>
         
         <br/>
         <br/>
         <button class="btn-enviar" type="submit" href="index.html">Enviar</button>
     
-    </form>
+</form>
+<script>
+  $(document).ready(function() {
+    $("#form-envia").validate({
+      rules: {
+        Nombre : {
+        required: true,
+        },
+        apellido : {
+        required: true,
+        },
+        email : {
+        required: true,
+        email: true
+        },
+        contraseña : {
+        required: true,
+        minlength: 8
+        },
+        telefono : {
+        required: true,
+        minlength: 9,
+        maxlength: 9
+        },
+        direccion : {
+        required: true,
+        },
+        fecha_nacimiento : {
+        required: true,
+        },
+
+      },
+      messages : {
+        Nombre: {
+        required:"Por favor ingrese su nombre",
+        },
+        apellido: {
+        required:"Por favor ingrese su apellido",
+        },
+        email: {
+        required:"Por favor ingrese su email",
+        email: "El formato correcto para emails es ej: mail@mail.com"
+        },
+        contraseña: {
+        required:"Por favor ingrese su contraseña",
+        minlength:"La contraseña debe contener al menos 8 caracteres"
+        },
+        telefono: {
+        required:"Por favor ingrese su telefono",
+        minlength: "Debe tener al menos 9 digitos",
+        maxlength: "Debe ser menor a 9 digitos",
+        },
+        direccion: {
+        required:"Por favor ingrese su direccion",
+        },
+        fecha_nacimiento: {
+        required:"Por favor ingrese su fecha de nacimiento",
+        },
+        
+        
+      }
+    });
+  });
+</script>
+
 
     </section>
     <ul>
