@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+</head>
+<body>
+    
+    <form id="basic-form" action="" method="post">
+        <p>
+          <label for="name">Nombre</label>
+          <input id="name" name="name" minlength="3" type="text" required>
+        </p>
+        <p>
+          <label for="email">Mail</label>
+          <input id="email" type="email" name="email" required>
+        </p>
+        <p>
+            <label for="age">Edad</label>
+            <input id="age" name="age" required>
+          </p>
+        <p>
+          <input class="submit" type="submit" value="SUBMIT">
+        </p>
+    </form>
+    <script>
+$(document).ready(function() {
+  $("#basic-form").validate({
+    rules: {
+      name : {
+        required: true,
+        minlength: 3
+      },
+      age: {
+        required: true,
+        number: true,
+        min: 18
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      weight: {
+        required: {
+          depends: function(elem) {
+            return $("#age").val() > 50
+          }
+        },
+        number: true,
+        min: 0
+      }
+    },
+    messages : {
+      name: {
+        minlength: "Nombre debe tener al menos 3 caracteres"
+      },
+      age: {
+        required: "Ingrese su edad",
+        number: "La edad debe ser de tipo numerico",
+        min: "Debe tener al menos 18 años"
+      },
+      email: {
+        email: "El formato correcto para emails es ej: mail@mail.com"
+      },
+      weight: {
+        required: "People with age over 50 have to enter their weight",
+        number: "Please enter your weight as a numerical value"
+      }
+    }
+  });
+});
+    </script>
+
+</body>
+</html>
