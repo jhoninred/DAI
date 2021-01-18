@@ -3,6 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos nuevos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <style>
     .formulario{
         width: 300px;
@@ -78,28 +80,79 @@ li a:hover {
     <section class="Formulario">
         
         <center><H1>Nuevo Producto</H1></center>
-<form>
+<form  id="basic-form" action="" method="post">
 
 
         <label class="texto" for="Nombre">Nombre del producto</label>
-        <input class="controles" type  ="text" name="Nombre" id="Nombre" required>
+        <input type  ="text" name="Nombre" id="Nombre" required>
         
-
+<br/>
         <label class="texto" for="Descripcion">Descripcion del producto</label>
-        <input class="controles" type="" name="apellido" id="apellido" required>
+        <input type="text" name="Descripcion" id="Descripcion" required>
        
-
-        <label class="texto" for="Valor">Precio</label>
-        <input class="controles" type="number" name="Email" id="Email" required>
+<br/>
+        <label class="texto" for="Valor">Precio</label><br/>
+        <input type="number" name="valor" id="valor" required>
         
-
+<br/>
         <label class="texto" for="Cantidad">Cantidad disponible</label>
-        <input class="controles" type="number" name="Contraseña" id="contraseña" required>
-        
+        <input type="number" name="cantidad" id="cantidad" required>
+        <br/>
         <button class="btn-enviar" type="submit" href="">agregar</button>
     
 </form>
+<script>
+    $(document).ready(function() {
+      $("#basic-form").validate({
+        rules: {
+          Nombre : {
+            required: true,
+            minlength: 3
+          },
+          Descripcion: {
+            required: true,
+            min: 10,
+            max: 70
+          },
+          valor: {
+            required: true,
+            number: true,
+            min: 290,
+            max: 99999
+          },
+          cantidad: {
+            required: true,
+            min: 1,
+            max: 99
+          },
+        },
+        messages : {
+            Nombre: {
+            required:"Ingrese nombre del producto",
+            minlength:"Nombre del producto debe tener al menos 3 caracteres"
+          },
+          Descripcion: {
+            required: "Ingrese Descripcion del producto",
+            min: "Descripcion minima 10 caracteres",
+            max: "Descripcion maxima alcanzada!"
+          },
+          valor: {
+            required:"Ingrese Valor del producto",
+            number: "Debe ingresar un valor numerico",
+            min:"valor minimo $290",
+            max:"valor maximo excedido!"
+          },
+          cantidad: {
+            required:"Ingrese Stock del producto",
+            min:"stock minimo permitido: 1",
+            max:"stock maximo permitido: 99"
+          },
+        }
+      });
+    });
+        </script>
     </section>
+
     <ul>
         
         <li>
