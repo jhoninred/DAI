@@ -105,6 +105,10 @@ li a:hover {
 <br/>
         <label class="texto" for="Descripcion">Descripcion del producto</label>
         <input class= "controles" type="text" name="Descripcion" id="Descripcion" required>
+<br/>
+
+        <label class="texto" for="codigo">Codigo</label>
+        <input class= "controles" type="text" name="codigo" id="codigo" required minlength="3" maxlength="10">
        
 <br/>
         <label class="texto" for="Valor">Precio</label><br/>
@@ -130,6 +134,12 @@ li a:hover {
             min: 10,
             max: 70
           },
+          codigo: {
+          required: true,
+          minlength: 3,
+          maxlength: 10
+          
+          },
           valor: {
             required: true,
             number: true,
@@ -151,6 +161,11 @@ li a:hover {
             required: "Por favor ingrese una descripcion",
             min: "Descripcion minima 10 caracteres",
             max: "Descripcion maxima alcanzada!"
+          },
+          codigo: {
+            required:"Por favor ingrese un codigo",
+            minlength:"debe tener minimo 3 caracteres",
+            maxlength:"debe tener maximo 10 caracteres"
           },
           valor: {
             required:"Por favor ingrese un valor",
