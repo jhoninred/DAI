@@ -17,7 +17,7 @@
       }
     .formulario{
         width: 300px;
-        background: #ffffff;
+        background: #33FF8B;
         padding: 30px;
         margin: auto;
         margin-top: 100px;
@@ -26,11 +26,12 @@
     .controles{
         width: 300px;
     }
-    .boton{
-        width: 300px;
-        background-color: rgb(255, 255, 255);
-        margin-top: 30px;
-        padding: 12px;
+    .btn-enviar{
+      width: 300px;
+      background-color: cadetblue;
+      margin-top: 30px;
+      padding: 12px;
+
     }
 
 
@@ -93,21 +94,21 @@ li a:hover {
 
 
         <label class="texto" for="Nombre">Nombre del producto</label>
-        <input type  ="text" name="Nombre" id="Nombre" required>
+        <input class= "controles" type  ="text" name="Nombre" id="Nombre" required>
         
 <br/>
         <label class="texto" for="Descripcion">Descripcion del producto</label>
-        <input type="text" name="Descripcion" id="Descripcion" required>
+        <input class= "controles" type="text" name="Descripcion" id="Descripcion" required>
        
 <br/>
         <label class="texto" for="Valor">Precio</label><br/>
-        <input type="number" name="valor" id="valor" required>
+        <input class= "controles" type="number" name="valor" id="valor" required>
         
 <br/>
         <label class="texto" for="Cantidad">Cantidad disponible</label>
-        <input type="number" name="cantidad" id="cantidad" required>
+        <input class= "controles" type="number" name="cantidad" id="cantidad" required>
         <br/>
-        <button class="btn-enviar" type="submit" href="">agregar</button>
+        <button class="btn-enviar" type="submit" href="">Agregar</button>
     
 </form>
 <script>
@@ -137,22 +138,22 @@ li a:hover {
         },
         messages : {
             Nombre: {
-            required:"Ingrese nombre del producto",
+            required:"Por favor ingrese el nombre del producto",
             minlength:"Nombre del producto debe tener al menos 3 caracteres"
           },
           Descripcion: {
-            required: "Ingrese Descripcion del producto",
+            required: "Por favor ingrese una descripcion",
             min: "Descripcion minima 10 caracteres",
             max: "Descripcion maxima alcanzada!"
           },
           valor: {
-            required:"Ingrese Valor del producto",
+            required:"Por favor ingrese un valor",
             number: "Debe ingresar un valor numerico",
             min:"valor minimo $290",
             max:"valor maximo excedido!"
           },
           cantidad: {
-            required:"Ingrese Stock del producto",
+            required:"Por favor ingrese stock del producto",
             min:"stock minimo permitido: 1",
             max:"stock maximo permitido: 99"
           },
